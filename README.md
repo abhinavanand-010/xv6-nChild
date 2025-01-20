@@ -102,6 +102,77 @@ Process ID: 4
 ```
 (Note: Process IDs will vary.)
 
+
+## Steps to Build, Run, and Test `xv6-nChild`
+
+Follow the steps below to build the `xv6-nChild` project, start QEMU, and test the custom system call.
+
+---
+
+## Steps to Build and Run
+
+### 1. Navigate to the Project Directory
+Open a terminal and navigate to the `xv6-nChild` directory:
+
+```bash
+cd xv6-nChild
+```
+
+### 2. Clean Previous Builds
+Remove old binaries and object files to ensure a clean build:
+
+```bash
+make clean
+```
+
+### 3. Build the Project
+Compile the kernel, user programs, and system call:
+
+```bash
+make
+```
+
+### 4. Start QEMU Emulator
+Boot the xv6 operating system in the QEMU emulator:
+
+```bash
+make qemu
+```
+
+### 5. Run the `nchild` Program
+Inside QEMU, execute the `nchild` program:
+
+```bash
+nchild
+```
+
+### 6. Input the Number of Children
+The program will prompt you to enter the desired number of children:
+
+```text
+Enter number of children: <n>
+```
+
+### 7. View Output
+The program will create the specified number of child processes and display their details. Example:
+
+```text
+Enter number of children: 3
+Successfully created 3 children
+Process ID: 5
+Process ID: 6
+Process ID: 7
+Process ID: 4
+```
+
+### 8. Exit QEMU
+To stop the emulator, press `Ctrl + A`, release the keys, then press `X`.
+
+---
+
+Follow these steps carefully to build, run, and test the `xv6-nChild` project successfully.
+
+
 ## Limitations
 - If one or more `fork()` calls fail during execution, no cleanup is performed for already created children.
 - The parent and children share the same code and data space until explicitly separated by the user program.
